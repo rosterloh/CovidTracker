@@ -1,0 +1,13 @@
+[Unit]
+Description=COVID-19 Tracker Service
+After=multi-user.target
+
+[Service]
+User=pi
+Type=simple
+WorkingDirectory=/home/pi/CovidTracker
+ExecStart=/usr/bin/python3 /home/pi/CovidTracker/main.py --update 3600
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
